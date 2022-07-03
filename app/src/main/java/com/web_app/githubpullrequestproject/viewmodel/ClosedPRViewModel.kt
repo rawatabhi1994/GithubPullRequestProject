@@ -1,4 +1,8 @@
 package com.web_app.githubpullrequestproject.viewmodel
 
-class ClosedPRViewModel {
+import androidx.lifecycle.ViewModel
+
+class ClosedPRViewModel :  ViewModel() {
+
+
 }
