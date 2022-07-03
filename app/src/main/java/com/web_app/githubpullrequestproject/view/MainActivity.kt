@@ -46,6 +46,8 @@ class MainActivity : AppCompatActivity() {
                  when(response){
                      is Resource.Success -> {
                           response.data?.let {
+                              loading_view.visibility =  View.GONE
+                              list_error.visibility = View.GONE
                               recyclerList.visibility = View.VISIBLE
                               pullRequestAdapter.updatePullRequestList(it)
                           }
