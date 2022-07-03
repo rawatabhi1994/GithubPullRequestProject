@@ -6,6 +6,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface PrApi {
-    @GET("repos/rawatabhi1994//pulls?state=closed")
+    @GET("repos/rawatabhi1994/GithubPullRequestProject/pulls?state=closed")
     suspend fun getPullRequest(): Response<List<PrModel>>
 }
