@@ -22,8 +22,12 @@ class ClosedPRViewModel(val repo: PrRepo) :  ViewModel() {
     private fun fetchPullRequest() {
         prData.postValue(Resource.Loading())
         viewModelScope.launch {
-            val response = repo.getClosedPr()
-            prData.postValue(handlePrResponse(response))
+            try {
+                val response = repo.getClosedPr()
+                prData.postValue(handlePrResponse(response))
+            }catch (e:Exception){
+                prData.postValue(Resource.Error("An error occurred while loading data"))
+            }
         }
     }
 

@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity() {
 
                          response.message?.let { message ->
                              list_error.visibility = View.VISIBLE
+                             loading_view.visibility =  View.GONE
                          }
                      }
                      is Resource.Loading -> {
